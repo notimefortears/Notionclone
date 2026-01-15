@@ -21,29 +21,28 @@ A high-performance, real-time collaborative text editor built from scratch using
 
 ### 1. Clone the repository
 ```bash
-git clone [https://github.com/YOUR_USERNAME/your-repo-name.git](https://github.com/YOUR_USERNAME/your-repo-name.git)
-cd your-repo-name
-
-2. Install dependencies
-Bash
-
+git clone [https://github.com/notimefortears/Notionclone.git](https://github.com/notimefortears/Notionclone.git)
+cd Notionclone
+```
+### 2. Install dependencies
+```bash
 npm install
+```
 
-3. Start the Sync Server
+### 3. Start the Sync Server
 
 In one terminal, run the custom WebSocket server:
-Bash
-
+```bash 
 node sync-server.mjs
-
-4. Start the Frontend
+```
+### 4. Start the Frontend
 
 In another terminal, run the Next.js development server:
 Bash
-
+```bash
 npm run dev
-
+```
 Visit http://localhost:3000 to start collaborating!
-📡 How the Sync Works
+## 📡 How the Sync Works
 
 Unlike standard JSON-based sync, this project uses Yjs binary updates. When a user types, the change is encoded into a Uint8Array and broadcasted via WebSockets. The server applies these updates to a headless document and relays the binary delta to all other connected collaborators, ensuring 100% state consistency.
